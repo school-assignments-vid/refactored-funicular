@@ -1,29 +1,33 @@
-name: NodeJS with Webpack
+name: NodeJS with Webpack and Deploy to Main
 
 on:
   push:
     branches: [ "dev" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.x, 20.x, 22.x]
-
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout Repository
+      uses: actions/checkout@v4
 
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js 22.x
       uses: actions/setup-node@v4
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: '22.x'
+        cache: 'npm'
 
-    - name: Build
+    - name: Install Dependencies and Build
       run: |
         npm install
-        npm run prepare
+        npm prepare # This is just an extra step, not always needed.
         npm run build
+
+    - name: Deploy to the build branch
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        branch: build
+        folder: dist
+        clean: true
