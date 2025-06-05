@@ -7,9 +7,6 @@ pnpm-debug.log*
 
 # Node.js / npm
 node_modules/
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
 
 # Editor/IDE specific files
 .vscode/
