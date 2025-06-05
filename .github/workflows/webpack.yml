@@ -21,7 +21,7 @@ jobs:
     - name: Install Dependencies and Build
       run: |
         npm install
-        npm prepare # This is just an extra step, not always needed.
+        npm run prepare # This is just an extra step, not always needed.
         npm run build
 
     - name: Deploy to the build branch
