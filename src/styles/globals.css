@@ -1,12 +1,13 @@
 @import "tailwindcss";
 
 @theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
@@ -20,93 +21,98 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+
+  --color-base-100: var(--base-100);
+  --color-base-200: var(--base-200);
+  --color-base-300: var(--base-300);
+  --color-base-400: var(--base-400);
+  --color-base-500: var(--base-500);
+  --color-base-600: var(--base-600);
+  --color-base-700: var(--base-700);
+  --color-base-800: var(--base-800);
+  --color-base-900: var(--base-900);
+
+  --color-yellow: var(--yellow);
+  --color-yellow-secondary: var(--yellow-secondary);
+  --color-orange: var(--orange);
+  --color-orange-secondary: var(--orange-secondary);
+  --color-green: var(--green);
+  --color-green-secondary: var(--green-secondary);
+  --color-blue: var(--blue);
+  --color-blue-secondary: var(--blue-secondary);
+  --color-purple: var(--purple);
+  --color-purple-secondary: var(--purple-secondary);
+  --color-red: var(--red);
+  --color-red-secondary: var(--red-secondary);
 }
 
 :root {
-  --radius: 1rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.141 0.005 285.823);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.141 0.005 285.823);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.141 0.005 285.823);
-  --primary: oklch(0.623 0.214 259.815);
-  --primary-foreground: oklch(0.97 0.014 254.604);
-  --secondary: oklch(0.967 0.001 286.375);
-  --secondary-foreground: oklch(0.21 0.006 285.885);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.21 0.006 285.885);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.97 0.014 254.604);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-primary: oklch(0.623 0.214 259.815);
-  --sidebar-primary-foreground: oklch(0.97 0.014 254.604);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
+  --radius: 0.50rem;
+
+  /*
+  Tbh I don't even know why I added all of these when I literall only use the green color once
+  */
+  --yellow: oklch(86.53% 0.17 99.41);
+  --yellow-secondary: oklch(93.98% 0.08 99.43);
+  --orange: oklch(77.98% 0.17 68.12);
+  --orange-secondary: oklch(88.08% 0.08 68.14);
+  --green: oklch(78.53% 0.23 145.42);
+  --green-secondary: oklch(96.34% 0.08 145.43);
+  --blue: oklch(75.49% 0.16 230.13);
+  --blue-secondary: oklch(89.52% 0.07 230.13);
+  --purple: oklch(68.96% 0.28 320.34);
+  --purple-secondary: oklch(92.83% 0.08 320.34);
+  --red: oklch(71.49% 0.22 25.4);
+  --red-secondary: oklch(86.29% 0.08 25.4);
+
+  --base-100: rgba(247, 249, 252, 1);
+  --base-200: rgba(237, 240, 247, 1);
+  --base-300: rgba(226, 231, 240, 1);
+  --base-400: rgba(203, 210, 224, 1);
+  --base-500: rgba(160, 171, 192, 1);
+  --base-600: rgba(113, 125, 150, 1);
+  --base-700: rgba(74, 84, 104, 1);
+  --base-800: rgba(45, 54, 72, 1);
+  --base-900: rgba(26, 32, 44, 1);
+
+  /*
+  I literally didn't use these at all... I really need to remove these but I'm too lazy..
+  No I'm not too lazy to write this message LOL
+  */
+  --background: oklch(97.94% 0.01 251.49);
+  --foreground: oklch(34.21% 0.02 255.45);
+  --primary: oklch(75.49% 0.16 230.13);
+  --primary-foreground: oklch(97.94% 0.01 251.49);
+  --secondary: oklch(95.6% 0.01 251.9);
+  --secondary-foreground: oklch(43.76% 0.02 254.85);
+  --muted: oklch(93.11% 0.01 252.12);
+  --muted-foreground: oklch(65.17% 0.02 253.72);
+  --accent: oklch(68.96% 0.28 320.34);
+  --accent-foreground: oklch(97.94% 0.01 251.49);
+  --destructive: oklch(71.49% 0.22 25.4);
+  --destructive-foreground: oklch(97.94% 0.01 251.49);
+  --border: oklch(86.53% 0.02 252.66);
+  --input: oklch(86.53% 0.02 252.66);
+  --ring: oklch(75.49% 0.16 230.13);
 }
 
 .dark {
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.546 0.245 262.881);
-  --primary-foreground: oklch(0.97 0.014 254.604);
-  --secondary: oklch(0.274 0.006 286.033);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.546 0.245 262.881);
-  --sidebar-primary-foreground: oklch(0.379 0.146 265.522);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+  /* Why tf did I even add the dark mode when I won't be using it... well that can come at a later date I guess :D */
+  --background: oklch(34.21% 0.02 255.45);
+  --foreground: oklch(97.94% 0.01 251.49);
+  --primary: oklch(75.49% 0.16 230.13);
+  --primary-foreground: oklch(34.21% 0.02 255.45);
+  --secondary: oklch(43.76% 0.02 254.85);
+  --secondary-foreground: oklch(95.6% 0.01 251.9);
+  --muted: oklch(54.49% 0.02 254.21);
+  --muted-foreground: oklch(86.53% 0.02 252.66);
+  --accent: oklch(68.96% 0.28 320.34);
+  --accent-foreground: oklch(34.21% 0.02 255.45);
+  --destructive: oklch(71.49% 0.22 25.4);
+  --destructive-foreground: oklch(34.21% 0.02 255.45);
+  --border: oklch(65.17% 0.02 253.72);
+  --input: oklch(65.17% 0.02 253.72);
+  --ring: oklch(75.49% 0.16 230.13);
 }
 
 @layer base {
@@ -116,326 +122,4 @@
   body {
     @apply bg-background text-foreground;
   }
-}
-
-@theme inline {
-  --animation-delay-0: 0s;
-  --animation-delay-75: 75ms;
-  --animation-delay-100: 0.1s;
-  --animation-delay-150: 0.15s;
-  --animation-delay-200: 0.2s;
-  --animation-delay-300: 0.3s;
-  --animation-delay-500: 0.5s;
-  --animation-delay-700: 0.7s;
-  --animation-delay-1000: 1s;
-  --animation-repeat-0: 0;
-  --animation-repeat-1: 1;
-  --animation-repeat-infinite: infinite;
-  --animation-direction-normal: normal;
-  --animation-direction-reverse: reverse;
-  --animation-direction-alternate: alternate;
-  --animation-direction-alternate-reverse: alternate-reverse;
-  --animation-fill-mode-none: none;
-  --animation-fill-mode-forwards: forwards;
-  --animation-fill-mode-backwards: backwards;
-  --animation-fill-mode-both: both;
-  --percentage-0: 0;
-  --percentage-5: 0.05;
-  --percentage-10: 0.1;
-  --percentage-15: 0.15;
-  --percentage-20: 0.2;
-  --percentage-25: 0.25;
-  --percentage-30: 0.3;
-  --percentage-35: 0.35;
-  --percentage-40: 0.4;
-  --percentage-45: 0.45;
-  --percentage-50: 0.5;
-  --percentage-55: 0.55;
-  --percentage-60: 0.6;
-  --percentage-65: 0.65;
-  --percentage-70: 0.7;
-  --percentage-75: 0.75;
-  --percentage-80: 0.8;
-  --percentage-85: 0.85;
-  --percentage-90: 0.9;
-  --percentage-95: 0.95;
-  --percentage-100: 1;
-  --percentage-translate-full: 1;
-  --animate-in: enter var(--tw-duration, 150ms) var(--tw-ease, ease);
-  --animate-out: exit var(--tw-duration, 150ms) var(--tw-ease, ease);
-  @keyframes enter {
-    from {
-      opacity: var(--tw-enter-opacity, 1);
-      transform: translate3d(
-          var(--tw-enter-translate-x, 0),
-          var(--tw-enter-translate-y, 0),
-          0
-        )
-        scale3d(
-          var(--tw-enter-scale, 1),
-          var(--tw-enter-scale, 1),
-          var(--tw-enter-scale, 1)
-        )
-        rotate(var(--tw-enter-rotate, 0));
-    }
-  }
-  @keyframes exit {
-    to {
-      opacity: var(--tw-exit-opacity, 1);
-      transform: translate3d(
-          var(--tw-exit-translate-x, 0),
-          var(--tw-exit-translate-y, 0),
-          0
-        )
-        scale3d(
-          var(--tw-exit-scale, 1),
-          var(--tw-exit-scale, 1),
-          var(--tw-exit-scale, 1)
-        )
-        rotate(var(--tw-exit-rotate, 0));
-    }
-  }
-  --animate-accordion-down: accordion-down var(--tw-duration, 200ms) ease-out;
-  --animate-accordion-up: accordion-up var(--tw-duration, 200ms) ease-out;
-  --animate-collapsible-down: collapsible-down var(--tw-duration, 200ms)
-    ease-out;
-  --animate-collapsible-up: collapsible-up var(--tw-duration, 200ms) ease-out;
-  @keyframes accordion-down {
-    from {
-      height: 0;
-    }
-    to {
-      height: var(
-        --radix-accordion-content-height,
-        var(
-          --bits-accordion-content-height,
-          var(--reka-accordion-content-height, auto)
-        )
-      );
-    }
-  }
-
-  @keyframes accordion-up {
-    from {
-      height: var(
-        --radix-accordion-content-height,
-        var(
-          --bits-accordion-content-height,
-          var(--reka-accordion-content-height, auto)
-        )
-      );
-    }
-    to {
-      height: 0;
-    }
-  }
-
-  @keyframes collapsible-down {
-    from {
-      height: 0;
-    }
-    to {
-      height: var(
-        --radix-collapsible-content-height,
-        var(
-          --bits-collapsible-content-height,
-          var(--reka-collapsible-content-height, auto)
-        )
-      );
-    }
-  }
-
-  @keyframes collapsible-up {
-    from {
-      height: var(
-        --radix-collapsible-content-height,
-        var(
-          --bits-collapsible-content-height,
-          var(--reka-collapsible-content-height, auto)
-        )
-      );
-    }
-    to {
-      height: 0;
-    }
-  }
-  --animate-caret-blink: caret-blink 1.25s ease-out infinite;
-  @keyframes caret-blink {
-    0%,
-    70%,
-    100% {
-      opacity: 1;
-    }
-    20%,
-    50% {
-      opacity: 0;
-    }
-  }
-}
-@utility delay-* {
-  animation-delay: calc(--value(number) * 1ms);
-  animation-delay: --value(--animation-delay- *, [duration], "initial", [ *]);
-}
-@utility repeat-* {
-  animation-iteration-count: --value(
-    --animation-repeat- *,
-    number,
-    "initial",
-    [ *]
-  );
-}
-@utility direction-* {
-  animation-direction: --value(--animation-direction- *, "initial", [ *]);
-}
-@utility fill-mode-* {
-  animation-fill-mode: --value(--animation-fill-mode- *, "initial", [ *]);
-}
-@utility running {
-  animation-play-state: running;
-}
-@utility paused {
-  animation-play-state: paused;
-}
-@utility play-state-* {
-  animation-play-state: --value("initial", [ *]);
-}
-@utility fade-in {
-  --tw-enter-opacity: 0;
-}
-@utility fade-in-* {
-  --tw-enter-opacity: calc(--value(number) / 100);
-  --tw-enter-opacity: --value(--percentage- *, [ *]);
-}
-@utility fade-out {
-  --tw-exit-opacity: 0;
-}
-@utility fade-out-* {
-  --tw-exit-opacity: calc(--value(number) / 100);
-  --tw-exit-opacity: --value(--percentage- *, [ *]);
-}
-@utility zoom-in {
-  --tw-enter-scale: 0;
-}
-@utility zoom-in-* {
-  --tw-enter-scale: calc(--value([percentage]) / 100%);
-  --tw-enter-scale: calc(--value([ratio], [number]));
-  --tw-enter-scale: --value(--percentage- *);
-}
-@utility zoom-out {
-  --tw-exit-scale: 0;
-}
-@utility zoom-out-* {
-  --tw-exit-scale: calc(--value([percentage]) / 100%);
-  --tw-exit-scale: calc(--value([ratio], [number]));
-  --tw-exit-scale: --value(--percentage- *);
-}
-@utility spin-in {
-  --tw-enter-rotate: 30deg;
-}
-@utility spin-in-* {
-  --tw-enter-rotate: calc(--value(number) * 1deg);
-  --tw-enter-rotate: --value(--rotate- *, [angle]);
-}
-@utility spin-out {
-  --tw-exit-rotate: 30deg;
-}
-@utility spin-out-* {
-  --tw-exit-rotate: calc(--value(number) * 1deg);
-  --tw-exit-rotate: --value(--rotate- *, [angle]);
-}
-@utility slide-in-from-top {
-  --tw-enter-translate-y: -100%;
-}
-@utility slide-in-from-top-* {
-  --tw-enter-translate-y: calc(--value(integer) * var(--spacing) * -1);
-  --tw-enter-translate-y: calc(
-    --value(--percentage- *, --percentage-translate- *) * -100%
-  );
-  --tw-enter-translate-y: calc(--value(ratio) * -100%);
-  --tw-enter-translate-y: calc(
-    --value(--translate- *, [percentage], [length]) * -1
-  );
-}
-@utility slide-in-from-bottom {
-  --tw-enter-translate-y: 100%;
-}
-@utility slide-in-from-bottom-* {
-  --tw-enter-translate-y: calc(--value(integer) * var(--spacing));
-  --tw-enter-translate-y: calc(
-    --value(--percentage- *, --percentage-translate- *) * 100%
-  );
-  --tw-enter-translate-y: calc(--value(ratio) * 100%);
-  --tw-enter-translate-y: --value(--translate- *, [percentage], [length]);
-}
-@utility slide-in-from-left {
-  --tw-enter-translate-x: -100%;
-}
-@utility slide-in-from-left-* {
-  --tw-enter-translate-x: calc(--value(integer) * var(--spacing) * -1);
-  --tw-enter-translate-x: calc(
-    --value(--percentage- *, --percentage-translate- *) * -100%
-  );
-  --tw-enter-translate-x: calc(--value(ratio) * 100%);
-  --tw-enter-translate-x: calc(
-    --value(--translate- *, [percentage], [length]) * -1
-  );
-}
-@utility slide-in-from-right {
-  --tw-enter-translate-x: 100%;
-}
-@utility slide-in-from-right-* {
-  --tw-enter-translate-x: calc(--value(integer) * var(--spacing));
-  --tw-enter-translate-x: calc(
-    --value(--percentage- *, --percentage-translate- *) * 100%
-  );
-  --tw-enter-translate-x: calc(--value(ratio) * 100%);
-  --tw-enter-translate-x: --value(--translate- *, [percentage], [length]);
-}
-@utility slide-out-to-top {
-  --tw-exit-translate-y: -100%;
-}
-@utility slide-out-to-top-* {
-  --tw-exit-translate-y: calc(--value(integer) * var(--spacing) * -1);
-  --tw-exit-translate-y: calc(
-    --value(--percentage- *, --percentage-translate- *) * -100%
-  );
-  --tw-exit-translate-y: calc(--value(ratio) * 100%);
-  --tw-exit-translate-y: calc(
-    --value(--translate- *, [percentage], [length]) * -1
-  );
-}
-@utility slide-out-to-bottom {
-  --tw-exit-translate-y: 100%;
-}
-@utility slide-out-to-bottom-* {
-  --tw-exit-translate-y: calc(--value(integer) * var(--spacing));
-  --tw-exit-translate-y: calc(
-    --value(--percentage- *, --percentage-translate- *) * 100%
-  );
-  --tw-exit-translate-y: calc(--value(ratio) * 100%);
-  --tw-exit-translate-y: --value(--translate- *, [percentage], [length]);
-}
-@utility slide-out-to-left {
-  --tw-exit-translate-x: -100%;
-}
-@utility slide-out-to-left-* {
-  --tw-exit-translate-x: calc(--value(integer) * var(--spacing) * -1);
-  --tw-exit-translate-x: calc(
-    --value(--percentage- *, --percentage-translate- *) * -100%
-  );
-  --tw-exit-translate-x: calc(--value(ratio) * 100%);
-  --tw-exit-translate-x: calc(
-    --value(--translate- *, [percentage], [length]) * -1
-  );
-}
-@utility slide-out-to-right {
-  --tw-exit-translate-x: 100%;
-}
-@utility slide-out-to-right-* {
-  --tw-exit-translate-x: calc(--value(integer) * var(--spacing));
-  --tw-exit-translate-x: calc(
-    --value(--percentage- *, --percentage-translate- *) * 100%
-  );
-  --tw-exit-translate-x: calc(--value(ratio) * 100%);
-  --tw-exit-translate-x: --value(--translate- *, [percentage], [length]);
 }

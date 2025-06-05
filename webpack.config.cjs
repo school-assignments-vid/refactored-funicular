@@ -3,7 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const ObfuscatorWebpackPlugin = require('obfuscator-webpack-plugin').default;
-const UnpluginTailwindcssMangle = require('unplugin-tailwindcss-mangle');
+const UnpluginTailwindcssMangle = require('unplugin-tailwindcss-mangle/webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
@@ -13,12 +14,19 @@ module.exports = (env, argv) => {
     entry: './src/main.ts',
     output: {
       path: path.resolve(__dirname, 'dist'),
-      filename: isProduction ? 'bundle.[contenthash].js' : 'bundle.js',
+      filename: isProduction ? '[name].[contenthash].js' : '[name].bundle.js',
       clean: true,
     },
     devtool: isProduction ? false : 'inline-source-map',
     module: {
       rules: [
+        {
+          test: /\.html$/i,
+          loader: 'html-loader',
+          options: {
+            sources: false,
+          },
+        },
         {
           test: /\.tsx?$/,
           use: 'ts-loader',
@@ -45,15 +53,31 @@ module.exports = (env, argv) => {
       new HtmlWebpackPlugin({
         template: './src/index.html',
         inject: 'body',
+        minify: isProduction ? {
+          removeComments: true,
+          collapseWhitespace: true,
+          removeRedundantAttributes: true,
+          useShortDoctype: true,
+          removeEmptyAttributes: true, 
+          removeStyleLinkTypeAttributes: true,
+          keepClosingSlash: true,
+          minifyJS: true,
+          minifyCSS: true,
+          minifyURLs: true,
+        } : false,
       }),
       new MiniCssExtractPlugin({
         filename: isProduction ? 'styles.[contenthash].css' : 'styles.css',
       }),
+      new CopyWebpackPlugin({
+        patterns: [
+          { from: 'src/assets', to: 'assets' },
+          { from: 'src/public', to: '' },
+        ],
+      }),
       isProduction &&
-        UnpluginTailwindcssMangle.webpack({
+        UnpluginTailwindcssMangle({
           classMapOutput: 'dist/tw-class-map.json',
-          include: [/\.js$/, /\.ts$/, /\.css$/], // Only process these file types
-          exclude: [/\.html$/], // Explicitly exclude HTML
         }),
       isProduction &&
         new ObfuscatorWebpackPlugin(
@@ -80,6 +104,38 @@ module.exports = (env, argv) => {
           },
         }),
       ],
+      splitChunks: {
+        chunks: 'all',
+        minSize: 20000,
+        maxSize: 70000,
+        minChunks: 1,
+        cacheGroups: {
+          framework: {
+            test: /[\\/]node_modules[\\/](react|react-dom|angular|vue)[\\/]/,
+            name: 'framework',
+            chunks: 'all',
+            priority: 40,
+          },
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'vendors',
+            chunks: 'all',
+            priority: 30,
+          },
+          common: {
+            name: 'common',
+            minChunks: 2,
+            chunks: 'all',
+            priority: 20,
+            reuseExistingChunk: true,
+          },
+          default: {
+            minChunks: 2,
+            priority: -20,
+            reuseExistingChunk: true
+          }
+        },
+      },
     },
     resolve: {
       extensions: ['.tsx', '.ts', '.js'],

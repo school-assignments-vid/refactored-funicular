@@ -21,14 +21,16 @@
   },
   "homepage": "https://github.com/kenshintanaka/Simple-Template#readme",
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.7",
+    "@tailwindcss/postcss": "^4.1.8",
+    "copy-webpack-plugin": "^13.0.0",
     "css-loader": "^7.1.2",
+    "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.3",
     "javascript-obfuscator": "^4.1.1",
     "mini-css-extract-plugin": "^2.9.2",
     "obfuscator-webpack-plugin": "^1.0.0",
     "postcss-loader": "^8.1.1",
-    "tailwindcss": "^4.1.7",
+    "tailwindcss": "^4.1.8",
     "tailwindcss-patch": "^7.1.1",
     "terser-webpack-plugin": "^5.3.14",
     "ts-loader": "^9.5.2",
@@ -37,5 +39,8 @@
     "webpack": "^5.99.9",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.1"
+  },
+  "dependencies": {
+    "postcss": "^8.5.4"
   }
 }
