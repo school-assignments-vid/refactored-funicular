@@ -58,18 +58,16 @@ jobs:
           node-version: '22.x'
 
       - name: 📦 Install Bundle Analyzer
-        run: npm install --save-dev webpack-cli webpack webpack-bundle-analyzer
+        run: npm install --save-dev webpack-bundle-analyzer
 
-      - name: 📊 Generate Stats & Run Bundle Analyzer
-        run: |
-          npx webpack --profile --json > dist/stats.json
-          npx webpack-bundle-analyzer dist/stats.json -m static -r bundle-report
+      - name: 📊 Run Bundle Analyzer
+        run: npx webpack-bundle-analyzer dist/stats.json -m static -r bundle-report
 
       - name: ☁️ Upload Bundle Report
         uses: actions/upload-artifact@v4
         with:
           name: bundle-report
-          path: bundle-report/
+          path: bundle-report
 
   security_audit:
     name: 🛡️ Security Audit
