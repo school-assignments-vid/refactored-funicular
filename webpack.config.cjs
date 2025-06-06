@@ -5,6 +5,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const ObfuscatorWebpackPlugin = require('obfuscator-webpack-plugin').default;
 const UnpluginTailwindcssMangle = require('unplugin-tailwindcss-mangle/webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer');
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
@@ -49,22 +50,34 @@ module.exports = (env, argv) => {
         },
       ],
     },
+    stats: {
+      preset: 'normal',
+      assets: true,
+      modules: true,
+    },
     plugins: [
+      new BundleAnalyzerPlugin({
+        analyzerMode: 'disabled',
+        generateStatsFile: true,
+        statsFilename: 'stats.json',
+      }),
       new HtmlWebpackPlugin({
         template: './src/index.html',
         inject: 'body',
-        minify: isProduction ? {
-          removeComments: true,
-          collapseWhitespace: true,
-          removeRedundantAttributes: true,
-          useShortDoctype: true,
-          removeEmptyAttributes: true, 
-          removeStyleLinkTypeAttributes: true,
-          keepClosingSlash: true,
-          minifyJS: true,
-          minifyCSS: true,
-          minifyURLs: true,
-        } : false,
+        minify: isProduction
+          ? {
+              removeComments: true,
+              collapseWhitespace: true,
+              removeRedundantAttributes: true,
+              useShortDoctype: true,
+              removeEmptyAttributes: true,
+              removeStyleLinkTypeAttributes: true,
+              keepClosingSlash: true,
+              minifyJS: true,
+              minifyCSS: true,
+              minifyURLs: true,
+            }
+          : false,
       }),
       new MiniCssExtractPlugin({
         filename: isProduction ? 'styles.[contenthash].css' : 'styles.css',
@@ -132,8 +145,8 @@ module.exports = (env, argv) => {
           default: {
             minChunks: 2,
             priority: -20,
-            reuseExistingChunk: true
-          }
+            reuseExistingChunk: true,
+          },
         },
       },
     },
