@@ -220,7 +220,6 @@ jobs:
           branch: build
           folder: ./dist
           clean: true
-          message: '🚀 Deployed from ${{ github.sha }}'
 
       - name: 🔧 Configure GitHub Pages
         uses: actions/configure-pages@v5
