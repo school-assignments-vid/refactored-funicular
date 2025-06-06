@@ -5,7 +5,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const ObfuscatorWebpackPlugin = require('obfuscator-webpack-plugin').default;
 const UnpluginTailwindcssMangle = require('unplugin-tailwindcss-mangle/webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
@@ -113,42 +113,11 @@ module.exports = (env, argv) => {
           terserOptions: {
             compress: {
               drop_console: true,
+              drop_debugger: true,
             },
           },
         }),
       ],
-      splitChunks: {
-        chunks: 'all',
-        minSize: 20000,
-        maxSize: 40000,
-        minChunks: 1,
-        cacheGroups: {
-          framework: {
-            test: /[\\/]node_modules[\\/](react|react-dom|angular|vue)[\\/]/,
-            name: 'framework',
-            chunks: 'all',
-            priority: 40,
-          },
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'vendors',
-            chunks: 'all',
-            priority: 30,
-          },
-          common: {
-            name: 'common',
-            minChunks: 2,
-            chunks: 'all',
-            priority: 20,
-            reuseExistingChunk: true,
-          },
-          default: {
-            minChunks: 2,
-            priority: -20,
-            reuseExistingChunk: true,
-          },
-        },
-      },
     },
     resolve: {
       extensions: ['.tsx', '.ts', '.js'],
