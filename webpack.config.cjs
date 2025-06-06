@@ -148,7 +148,7 @@ module.exports = (env, argv) => {
         directory: path.join(__dirname, 'dist'),
       },
       compress: true,
-      port: 3000,
+      port: 8080,
       hot: true,
       liveReload: true,
       historyApiFallback: true,
