@@ -1,14 +1,14 @@
 {
   "hash": "910339ae1382cbedb6ac",
   "version": "5.99.9",
-  "time": 4139,
-  "builtAt": 1749198267652,
+  "time": 4113,
+  "builtAt": 1749199418061,
   "publicPath": "auto",
   "outputPath": "/home/runner/work/refactored-funicular/refactored-funicular/dist",
   "assetsByChunkName": {
     "main": [
       "styles.3954ca281e3f68c02171.css",
-      "main.661a34d8589a5672163a.js"
+      "main.1321fb67214e21da726d.js"
     ]
   },
   "assets": [
@@ -560,18 +560,18 @@
     },
     {
       "type": "asset",
-      "name": "main.661a34d8589a5672163a.js",
-      "size": 39602,
+      "name": "main.1321fb67214e21da726d.js",
+      "size": 39568,
       "emitted": true,
       "comparedForEmit": false,
       "cached": false,
       "info": {
         "immutable": true,
-        "contenthash": "661a34d8589a5672163a",
+        "contenthash": "1321fb67214e21da726d",
         "javascriptModule": false,
         "minimized": true,
         "obfuscated": true,
-        "size": 39602
+        "size": 39568
       },
       "chunkNames": [
         "main"
@@ -924,7 +924,7 @@
       ],
       "files": [
         "styles.3954ca281e3f68c02171.css",
-        "main.661a34d8589a5672163a.js"
+        "main.1321fb67214e21da726d.js"
       ],
       "auxiliaryFiles": [],
       "hash": "b032adf24ffcf636966b",
@@ -16567,12 +16567,12 @@
           "size": 38843
         },
         {
-          "name": "main.661a34d8589a5672163a.js",
-          "size": 39602
+          "name": "main.1321fb67214e21da726d.js",
+          "size": 39568
         }
       ],
       "filteredAssets": 0,
-      "assetsSize": 78445,
+      "assetsSize": 78411,
       "auxiliaryAssets": [],
       "filteredAuxiliaryAssets": 0,
       "auxiliaryAssetsSize": 0,
@@ -16593,12 +16593,12 @@
           "size": 38843
         },
         {
-          "name": "main.661a34d8589a5672163a.js",
-          "size": 39602
+          "name": "main.1321fb67214e21da726d.js",
+          "size": 39568
         }
       ],
       "filteredAssets": 0,
-      "assetsSize": 78445,
+      "assetsSize": 78411,
       "auxiliaryAssets": [],
       "filteredAuxiliaryAssets": 0,
       "auxiliaryAssetsSize": 0,
@@ -16616,8 +16616,8 @@
       "name": "HtmlWebpackCompiler",
       "hash": "fa7b10d251d497dbc971",
       "version": "5.99.9",
-      "time": 1549,
-      "builtAt": 1749198265115,
+      "time": 1546,
+      "builtAt": 1749199415554,
       "publicPath": "",
       "outputPath": "/home/runner/work/refactored-funicular/refactored-funicular/dist",
       "assetsByChunkName": {},
