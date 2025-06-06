@@ -67,7 +67,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: bundle-report
-          path: bundle-report
+          path: bundle-report.html
 
   security_audit:
     name: 🛡️ Security Audit
