@@ -58,7 +58,7 @@ jobs:
           node-version: '22.x'
 
       - name: 📦 Install Bundle Analyzer
-        run: npm install --save-dev webpack webpack-bundle-analyzer
+        run: npm install --save-dev webpack-cli webpack webpack-bundle-analyzer
 
       - name: 📊 Generate Stats & Run Bundle Analyzer
         run: |
