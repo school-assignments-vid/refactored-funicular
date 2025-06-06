@@ -130,7 +130,14 @@ jobs:
       - name: 💡 Run Lighthouse Audit
         run: |
           mkdir -p lhci-report
-          lhci autorun --config=.lighthouserc.json --outputDir=lhci-report
+          lhci autorun \
+            --collect.url=http://localhost:8080 \
+            --assert.assertions.categories:performance='error:score>=0.9' \
+            --assert.assertions.categories:accessibility='error:score>=0.9' \
+            --assert.assertions.categories:best-practices='error:score>=0.9' \
+            --assert.assertions.categories:seo='warn:score>=0.85' \
+            --upload.target=filesystem \
+            --upload.outputDir=lhci-report
 
       - name: ☁️ Upload Lighthouse Report
         uses: actions/upload-artifact@v4
