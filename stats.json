@@ -1,14 +1,14 @@
 {
-  "hash": "910339ae1382cbedb6ac",
+  "hash": "7e33a7fb49e894f7043f",
   "version": "5.99.9",
-  "time": 4594,
-  "builtAt": 1749202947153,
+  "time": 4315,
+  "builtAt": 1749627665629,
   "publicPath": "auto",
   "outputPath": "/home/runner/work/refactored-funicular/refactored-funicular/dist",
   "assetsByChunkName": {
     "main": [
       "styles.3954ca281e3f68c02171.css",
-      "main.d44e7e6b0efa2b19e83e.js"
+      "main.5ca4bbdb8227eeaccfd1.js"
     ]
   },
   "assets": [
@@ -560,18 +560,18 @@
     },
     {
       "type": "asset",
-      "name": "main.d44e7e6b0efa2b19e83e.js",
-      "size": 39567,
+      "name": "main.5ca4bbdb8227eeaccfd1.js",
+      "size": 39566,
       "emitted": true,
       "comparedForEmit": false,
       "cached": false,
       "info": {
         "immutable": true,
-        "contenthash": "d44e7e6b0efa2b19e83e",
+        "contenthash": "5ca4bbdb8227eeaccfd1",
         "javascriptModule": false,
         "minimized": true,
         "obfuscated": true,
-        "size": 39567
+        "size": 39566
       },
       "chunkNames": [
         "main"
@@ -910,9 +910,9 @@
       "initial": true,
       "entry": true,
       "recorded": false,
-      "size": 135499,
+      "size": 135468,
       "sizes": {
-        "javascript": 96657,
+        "javascript": 96626,
         "css/mini-extract": 38842
       },
       "names": [
@@ -924,10 +924,10 @@
       ],
       "files": [
         "styles.3954ca281e3f68c02171.css",
-        "main.d44e7e6b0efa2b19e83e.js"
+        "main.5ca4bbdb8227eeaccfd1.js"
       ],
       "auxiliaryFiles": [],
-      "hash": "b032adf24ffcf636966b",
+      "hash": "5c05a4e9c2f9ca953ae3",
       "childrenByOrder": {},
       "id": 792,
       "siblings": [],
@@ -938,9 +938,9 @@
           "type": "module",
           "moduleType": "javascript/esm",
           "layer": null,
-          "size": 96657,
+          "size": 96626,
           "sizes": {
-            "javascript": 96657
+            "javascript": 96626
           },
           "built": true,
           "codeGenerated": true,
@@ -2467,7 +2467,7 @@
                   "active": false,
                   "explanation": "",
                   "userRequest": "@/h",
-                  "loc": "2:0-24",
+                  "loc": "1:0-24",
                   "moduleId": null,
                   "resolvedModuleId": null
                 },
@@ -2481,7 +2481,7 @@
                   "active": true,
                   "explanation": "",
                   "userRequest": "@/h",
-                  "loc": "6:15-16",
+                  "loc": "5:15-16",
                   "moduleId": null,
                   "resolvedModuleId": null
                 },
@@ -2495,7 +2495,7 @@
                   "active": true,
                   "explanation": "",
                   "userRequest": "@/h",
-                  "loc": "41:29-30",
+                  "loc": "40:29-30",
                   "moduleId": null,
                   "resolvedModuleId": null
                 },
@@ -2509,7 +2509,7 @@
                   "active": true,
                   "explanation": "",
                   "userRequest": "@/h",
-                  "loc": "42:8-9",
+                  "loc": "41:8-9",
                   "moduleId": null,
                   "resolvedModuleId": null
                 },
@@ -2523,7 +2523,7 @@
                   "active": true,
                   "explanation": "",
                   "userRequest": "@/h",
-                  "loc": "42:143-144",
+                  "loc": "41:143-144",
                   "moduleId": null,
                   "resolvedModuleId": null
                 },
@@ -2537,7 +2537,7 @@
                   "active": true,
                   "explanation": "",
                   "userRequest": "@/h",
-                  "loc": "43:12-13",
+                  "loc": "42:12-13",
                   "moduleId": null,
                   "resolvedModuleId": null
                 },
@@ -2551,7 +2551,7 @@
                   "active": true,
                   "explanation": "",
                   "userRequest": "@/h",
-                  "loc": "44:8-9",
+                  "loc": "43:8-9",
                   "moduleId": null,
                   "resolvedModuleId": null
                 },
@@ -5523,9 +5523,9 @@
               "type": "module",
               "moduleType": "javascript/auto",
               "layer": null,
-              "size": 1958,
+              "size": 1927,
               "sizes": {
-                "javascript": 1958
+                "javascript": 1927
               },
               "built": true,
               "codeGenerated": false,
@@ -5717,9 +5717,9 @@
       "type": "module",
       "moduleType": "javascript/esm",
       "layer": null,
-      "size": 96657,
+      "size": 96626,
       "sizes": {
-        "javascript": 96657
+        "javascript": 96626
       },
       "built": true,
       "codeGenerated": true,
@@ -7231,7 +7231,7 @@
               "active": false,
               "explanation": "",
               "userRequest": "@/h",
-              "loc": "2:0-24",
+              "loc": "1:0-24",
               "moduleId": null,
               "resolvedModuleId": null
             },
@@ -7245,7 +7245,7 @@
               "active": true,
               "explanation": "",
               "userRequest": "@/h",
-              "loc": "6:15-16",
+              "loc": "5:15-16",
               "moduleId": null,
               "resolvedModuleId": null
             },
@@ -7259,7 +7259,7 @@
               "active": true,
               "explanation": "",
               "userRequest": "@/h",
-              "loc": "41:29-30",
+              "loc": "40:29-30",
               "moduleId": null,
               "resolvedModuleId": null
             },
@@ -7273,7 +7273,7 @@
               "active": true,
               "explanation": "",
               "userRequest": "@/h",
-              "loc": "42:8-9",
+              "loc": "41:8-9",
               "moduleId": null,
               "resolvedModuleId": null
             },
@@ -7287,7 +7287,7 @@
               "active": true,
               "explanation": "",
               "userRequest": "@/h",
-              "loc": "42:143-144",
+              "loc": "41:143-144",
               "moduleId": null,
               "resolvedModuleId": null
             },
@@ -7301,7 +7301,7 @@
               "active": true,
               "explanation": "",
               "userRequest": "@/h",
-              "loc": "43:12-13",
+              "loc": "42:12-13",
               "moduleId": null,
               "resolvedModuleId": null
             },
@@ -7315,7 +7315,7 @@
               "active": true,
               "explanation": "",
               "userRequest": "@/h",
-              "loc": "44:8-9",
+              "loc": "43:8-9",
               "moduleId": null,
               "resolvedModuleId": null
             },
@@ -10287,9 +10287,9 @@
           "type": "module",
           "moduleType": "javascript/auto",
           "layer": null,
-          "size": 1958,
+          "size": 1927,
           "sizes": {
-            "javascript": 1958
+            "javascript": 1927
           },
           "built": true,
           "codeGenerated": false,
@@ -12205,7 +12205,7 @@
           "active": false,
           "explanation": "",
           "userRequest": "@/h",
-          "loc": "2:0-24",
+          "loc": "1:0-24",
           "moduleId": null,
           "resolvedModuleId": null
         },
@@ -12219,7 +12219,7 @@
           "active": true,
           "explanation": "",
           "userRequest": "@/h",
-          "loc": "6:15-16",
+          "loc": "5:15-16",
           "moduleId": null,
           "resolvedModuleId": null
         },
@@ -12233,7 +12233,7 @@
           "active": true,
           "explanation": "",
           "userRequest": "@/h",
-          "loc": "41:29-30",
+          "loc": "40:29-30",
           "moduleId": null,
           "resolvedModuleId": null
         },
@@ -12247,7 +12247,7 @@
           "active": true,
           "explanation": "",
           "userRequest": "@/h",
-          "loc": "42:8-9",
+          "loc": "41:8-9",
           "moduleId": null,
           "resolvedModuleId": null
         },
@@ -12261,7 +12261,7 @@
           "active": true,
           "explanation": "",
           "userRequest": "@/h",
-          "loc": "42:143-144",
+          "loc": "41:143-144",
           "moduleId": null,
           "resolvedModuleId": null
         },
@@ -12275,7 +12275,7 @@
           "active": true,
           "explanation": "",
           "userRequest": "@/h",
-          "loc": "43:12-13",
+          "loc": "42:12-13",
           "moduleId": null,
           "resolvedModuleId": null
         },
@@ -12289,7 +12289,7 @@
           "active": true,
           "explanation": "",
           "userRequest": "@/h",
-          "loc": "44:8-9",
+          "loc": "43:8-9",
           "moduleId": null,
           "resolvedModuleId": null
         },
@@ -15261,9 +15261,9 @@
       "type": "module",
       "moduleType": "javascript/auto",
       "layer": null,
-      "size": 1958,
+      "size": 1927,
       "sizes": {
-        "javascript": 1958
+        "javascript": 1927
       },
       "built": true,
       "codeGenerated": false,
@@ -16567,12 +16567,12 @@
           "size": 38843
         },
         {
-          "name": "main.d44e7e6b0efa2b19e83e.js",
-          "size": 39567
+          "name": "main.5ca4bbdb8227eeaccfd1.js",
+          "size": 39566
         }
       ],
       "filteredAssets": 0,
-      "assetsSize": 78410,
+      "assetsSize": 78409,
       "auxiliaryAssets": [],
       "filteredAuxiliaryAssets": 0,
       "auxiliaryAssetsSize": 0,
@@ -16593,12 +16593,12 @@
           "size": 38843
         },
         {
-          "name": "main.d44e7e6b0efa2b19e83e.js",
-          "size": 39567
+          "name": "main.5ca4bbdb8227eeaccfd1.js",
+          "size": 39566
         }
       ],
       "filteredAssets": 0,
-      "assetsSize": 78410,
+      "assetsSize": 78409,
       "auxiliaryAssets": [],
       "filteredAuxiliaryAssets": 0,
       "auxiliaryAssetsSize": 0,
@@ -16616,8 +16616,8 @@
       "name": "HtmlWebpackCompiler",
       "hash": "fa7b10d251d497dbc971",
       "version": "5.99.9",
-      "time": 1704,
-      "builtAt": 1749202944356,
+      "time": 1598,
+      "builtAt": 1749627663015,
       "publicPath": "",
       "outputPath": "/home/runner/work/refactored-funicular/refactored-funicular/dist",
       "assetsByChunkName": {},
