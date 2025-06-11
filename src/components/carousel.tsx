@@ -1,5 +1,3 @@
-// src/components/Carousel.tsx
-
 import { h } from '@/h';
 import { ComponentProps } from '@/types';
 
